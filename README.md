@@ -12,7 +12,11 @@ Basic Authentication implementation example with Spring Security and Spring Sess
 
 ## Running the Application
 
-1. Run MySQL via Docker Desktop
+1. Clone repository
+```
+git clone https://github.com/sevketbuyukdemir/basic-authentication.git
+```
+2. Run MySQL via Docker Desktop
 - To create MySQL container for the first time.
 ```
 docker-compose up -d
@@ -25,5 +29,5 @@ docker-compose start
 ```
 docker-compose stop
 ```
-2. Run Spring Boot application
-3. You can find Postman collection from resources.
+3. Run Spring Boot application
+4. You can find Postman collection from resources.
