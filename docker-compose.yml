@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: basic_authentication
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devuser
+    volumes:
+      - ./src/main/resources/database.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
