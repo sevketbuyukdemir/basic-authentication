@@ -41,7 +41,16 @@
             <AppenderRef ref="LogFile"/>
         </Logger>
         <!-- Security Log files -->
-        <Logger name="com.sevketbuyukdemir.basic_authentication.security.events.DevSecurityConfig" level="info" additivity="false">
+        <Logger name="com.sevketbuyukdemir.basic_authentication.security.events.AuthenticationEvents" level="info" additivity="false">
+            <AppenderRef ref="SecurityLogFile"/>
+        </Logger>
+        <Logger name="com.sevketbuyukdemir.basic_authentication.security.events.CustomAccessDeniedHandler" level="info" additivity="false">
+            <AppenderRef ref="SecurityLogFile"/>
+        </Logger>
+        <Logger name="com.sevketbuyukdemir.basic_authentication.security.events.CustomAuthenticationEntryPoint" level="info" additivity="false">
+            <AppenderRef ref="SecurityLogFile"/>
+        </Logger>
+        <Logger name="com.sevketbuyukdemir.basic_authentication.security.config.DevSecurityConfig" level="info" additivity="false">
             <AppenderRef ref="SecurityLogFile"/>
         </Logger>
     </Loggers>

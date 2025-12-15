@@ -1,5 +1,7 @@
 package com.sevketbuyukdemir.basic_authentication.security.config;
 
+import com.sevketbuyukdemir.basic_authentication.security.events.CustomAccessDeniedHandler;
+import com.sevketbuyukdemir.basic_authentication.security.events.CustomAuthenticationEntryPoint;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -84,7 +86,11 @@ public class DevSecurityConfig {
                 .securityContext((securityContext) -> securityContext
                         .requireExplicitSave(true)
                 )
-                .httpBasic(Customizer.withDefaults());
+                .httpBasic(Customizer.withDefaults())
+                .exceptionHandling(ehc -> ehc
+                        .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+                        .accessDeniedHandler(new CustomAccessDeniedHandler())
+                );
         return http.build();
     }
 
